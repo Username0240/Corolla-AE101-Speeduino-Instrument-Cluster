@@ -137,5 +137,7 @@ All design files, KiCad schematics, and complete Arduino source code are availab
 
 Check out the YouTube videos below to see the bench testing, sweep calibration, and live operation in action:
 
-* 🎬 [Bench Testing & Air-Core Coil Sweeps](https://www.youtube.com/watch?v=YOUR_VIDEO_ID_1) — *Demonstrating air-core needle vector control and OLED display updates.*
-* 🎬 [In-Car Live Demonstration & Testing](https://www.youtube.com/watch?v=YOUR_VIDEO_ID_2) — *Full testing of the modernised AE101 instrument cluster connected to the Speeduino ECU.*
+* [Bench Testing & Air-Core Coil Sweeps](https://youtu.be/y7sM6UiGjOI) — *Demonstrating air-core needle vector control.*
+* [In-Car Testing](https://youtu.be/Xos--F4umKw) — *In-car test of the air-core speedometer movement live from the vehicle's speed sensor.*
+* [Startup Sweep & OLED Bootup Test](https://youtu.be/AXZ8mHgiMnA) — *Video showing the cluster boot sequence: dual I2C OLED displays initializing text and calibration sweep across both air-core gauge needles.*
+* [Full In-Car Demonstration](https://youtu.be/2yAkAh4_3k8) — *Complete in-dash test showing key-on bootup, dual OLED mileage display, gauge calibration sweep, engine startup, and live tachometer rev response.*
