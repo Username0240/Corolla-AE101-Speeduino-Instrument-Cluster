@@ -111,3 +111,31 @@ The stock Toyota AE101 air-core gauge movements use a 4-pin quadrant configurati
 > *Terminal pin-assignment for OEM Toyota AE101 air-core gauge motor movement.*
 
 
+### 4. OEM Trip Meter Reset Stalk Integration
+
+To retain the factory look and feel, the original mechanical trip reset stalk was repurposed to reset the digital trip meter on the OLED display:
+
+![Trip Reset Switch Integration](Image/asd23.gif)
+> *The original push-stalk mechanism modified with a momentary tactile switch to reset the digital OLED trip meter.*
+
+* **Mechanism:** The stock spring-loaded reset pin triggers a small tactile push switch wired directly to digital input `D12` (`TRIP RST`) on the Arduino board.
+* **Firmware Action:** Pressing the physical stalk pulls `D12` low, instantly resetting the OLED trip distance counter back to `0.0 km` and updating the EEPROM storage.
+
+---
+
+## Firmware Code & Schematics
+
+All design files, KiCad schematics, and complete Arduino source code are available in this repository:
+
+* **Schematic** Available in the [`/Schematics`](./Schematics) directory.
+* **Arduino Firmware:** Located in the [`/Firmware`](./Firmware) folder.
+
+>  **Note on Development:** 
+> The firmware logic—ranging from microsecond input capture and sine/cosine PWM vector driving to dual I2C OLED display rendering—was developed through an iterative **vibe coding** process using AI assistance. Rapidly prototyping and refining algorithms directly in code accelerated the execution of this overhaul.
+
+## Video Demonstrations & Testing
+
+Check out the YouTube videos below to see the bench testing, sweep calibration, and live operation in action:
+
+* 🎬 [Bench Testing & Air-Core Coil Sweeps](https://www.youtube.com/watch?v=YOUR_VIDEO_ID_1) — *Demonstrating air-core needle vector control and OLED display updates.*
+* 🎬 [In-Car Live Demonstration & Testing](https://www.youtube.com/watch?v=YOUR_VIDEO_ID_2) — *Full testing of the modernised AE101 instrument cluster connected to the Speeduino ECU.*
