@@ -65,3 +65,17 @@ Since the speedometer was being converted to microcontroller control, we also mo
 ![Dual OLED Odometer Display Bench Test](https://github.com/Username0240/Corolla-AE101-Speeduino-Instrument-Cluster/blob/3a3fcad332cbbab7e577545369b46e9fef589fc7/Image/20260829_125432.gif)
 
 > *Bench testing dual 0.96" I2C OLED screens running trip meter and total mileage displays.*
+
+4. **Custom 3D-Printed OLED Mounting:** Without support, the OLED display boards sat loosely behind the cutouts and flapped around inside the housing. To solve this, custom angled PETG brackets were designed and 3D printed to stick the dual displays securely in place against the stock gauge faceplate.
+
+![OLED Board Fitment Issue](Image/asdasdsad.png)
+> *Test-fitting the 0.96" OLED display into the speedometer cutout, showing the unanchored board.*
+
+![3D Printing Angled OLED Mounts](https://github.com/Username0240/Corolla-AE101-Speeduino-Instrument-Cluster/blob/d1efcc0d1e7f19e67f1f4c74cf0dff6ac06a0bd3/Image/Screenshot%202026-08-31%20201458.png)
+> *Left: Printing custom white PETG mounting brackets. Right: Finished angled screen mounts.*
+
+![Final Cluster OLED Integration](Image/Screenshot_2026-08-31_202456.png)
+> *Dual OLED displays mounted securely with the custom brackets.*
+
+![Final Cluster OLED Integration](Image/20260829_155654.gif)
+> *Complete mechanical assembly behind the OEM gauge face.*
