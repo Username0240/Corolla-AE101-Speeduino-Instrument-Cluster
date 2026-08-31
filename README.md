@@ -93,31 +93,21 @@ The custom cluster driver board combines the Arduino Nano, 12V-to-5V power regul
 ![Protoboard Front and Back](Image/Untitled.png)
 > *Left: Top view of the custom protoboard. Right: Bottom view of the custom protoboard.*
 
-### Protoboard PINOUT:
-![Protoboard PINOUT](Image/Untitled.png)
+### 2. Instrument Cluster Connection.
 
+To supply power and receive sensor signals without altering the original vehicle wiring harness, the custom protoboard taps directly into the stock instrument cluster's rear flexible PCB screw terminals.
 
-### 2. All Connection (PICTORIAL DIAGRAM).
+![OEM Toyota Cluster Rear PCB Terminal Mapping](Image/DASHBOARD.png)
 
-| Pin / Terminal | Function | Description / Target Connection |
-| :--- | :--- | :--- |
-| **12V IN** | Main Power | Switched $+12\text{V}$ Ignition source (Fused) |
-| **GND** | System Ground | Main chassis / Sensor ground reference |
-| **TACH_IN** | RPM Signal Input | $5\text{V}$ Pulse output from Speeduino ECU |
-| **VSS_IN** | Speed Signal Input | Pulled-up signal from restored 3-wire Hall VSS (`INT0` / `D2`) |
-| **SDA / SCL** | I2C Bus | Signal lines for dual monochromatic OLED displays |
-| **TACH_COIL_A / B** | Tachometer Drive | PWM outputs to stock RPM air-core gauge coils |
-| **SPEED_COIL_A / B** | Speedometer Drive | PWM outputs to stock Speedo air-core gauge coils |
-
+> ⚠️ **Important Circuit Isolation Note:**
+> To prevent the legacy cluster PCB components from interfering with the Arduino Nano's PWM control of the air-core gauge coils, the original circuit board traces must be completely isolated from the air-core terminal posts. I achieved this by installing rubber **O-rings around the mounting bolt shoulders** to physically break electrical contact with the stock PCB while keeping the gauge mechanics firmly secured.
 ---
 
 ### 3. OEM Toyota Air-Core Motor Pinout
 
 The stock Toyota AE101 air-core gauge movements use a 4-pin quadrant configuration driven by two orthogonal field coils (Sine and Cosine):
 
-![Air-Core Motor Terminal Layout](Image/aircore_pinout.png)
-> *Terminal pinout for OEM Toyota AE101 air-core gauge motor movement.*
+![Air-Core Motor Terminal Layout](Image/outputspdtach.png)
+> *Terminal pin-assignment for OEM Toyota AE101 air-core gauge motor movement.*
 
-* **Coil 1 (Sine):** Pins 1 & 2 — Driven via differential PWM to establish horizontal vector deflection.
-* **Coil 2 (Cosine):** Pins 3 & 4 — Driven via differential PWM to establish vertical vector deflection.
-* **Center Tap / Ground Reference:** Connected according to H-bridge or push-pull transistor driver configuration.
+
