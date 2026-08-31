@@ -79,3 +79,45 @@ Since the speedometer was being converted to microcontroller control, we also mo
 
 ![Final Cluster OLED Integration](Image/20260829_155654.gif)
 > *Complete mechanical assembly behind the OEM gauge face.*
+
+## Building the Circuit
+
+With the signal processing and screen mounting verified on the bench, the complete cluster control system was transferred from breadboard to a permanent, hand-soldered prototype board (protoboard).
+
+### 1. Circuit Schematic & Final Protoboard
+The custom cluster driver board combines the Arduino Nano, 12V-to-5V power regulation, VSS signal conditioning, dual I2C OLED display headers, and transistor/PWM driver stages for the air-core gauge coils.
+
+### Schematic: 
+![Complete System Circuit Schematic](Image/schematic.png)
+
+![Protoboard Front and Back](Image/Untitled.png)
+> *Left: Top view of the custom protoboard. Right: Bottom view of the custom protoboard.*
+
+### Protoboard PINOUT:
+![Protoboard PINOUT](Image/Untitled.png)
+
+
+### 2. All Connection (PICTORIAL DIAGRAM).
+
+| Pin / Terminal | Function | Description / Target Connection |
+| :--- | :--- | :--- |
+| **12V IN** | Main Power | Switched $+12\text{V}$ Ignition source (Fused) |
+| **GND** | System Ground | Main chassis / Sensor ground reference |
+| **TACH_IN** | RPM Signal Input | $5\text{V}$ Pulse output from Speeduino ECU |
+| **VSS_IN** | Speed Signal Input | Pulled-up signal from restored 3-wire Hall VSS (`INT0` / `D2`) |
+| **SDA / SCL** | I2C Bus | Signal lines for dual monochromatic OLED displays |
+| **TACH_COIL_A / B** | Tachometer Drive | PWM outputs to stock RPM air-core gauge coils |
+| **SPEED_COIL_A / B** | Speedometer Drive | PWM outputs to stock Speedo air-core gauge coils |
+
+---
+
+### 3. OEM Toyota Air-Core Motor Pinout
+
+The stock Toyota AE101 air-core gauge movements use a 4-pin quadrant configuration driven by two orthogonal field coils (Sine and Cosine):
+
+![Air-Core Motor Terminal Layout](Image/aircore_pinout.png)
+> *Terminal pinout for OEM Toyota AE101 air-core gauge motor movement.*
+
+* **Coil 1 (Sine):** Pins 1 & 2 — Driven via differential PWM to establish horizontal vector deflection.
+* **Coil 2 (Cosine):** Pins 3 & 4 — Driven via differential PWM to establish vertical vector deflection.
+* **Center Tap / Ground Reference:** Connected according to H-bridge or push-pull transistor driver configuration.
