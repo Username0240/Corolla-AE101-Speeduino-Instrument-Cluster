@@ -1,7 +1,7 @@
 # Corolla-AE101-Speeduino-Instrument-Cluster
 This repository documents my step-by-step journey of restoring, converting, and modernizing a broken stock **Toyota Corolla AE101 (7th Gen)** instrument cluster to work seamlessly with a **Speeduino standalone ECU**.
 
-![App Screenshot](Image/20260831_161812.gif)
+![App Screenshot](https://github.com/Username0240/Corolla-AE101-Speeduino-Instrument-Cluster/blob/3a3fcad332cbbab7e577545369b46e9fef589fc7/Image/20260830_235159%20(1).gif)
 
 ## Project Background & The Problem
 
@@ -62,5 +62,6 @@ Since the speedometer was being converted to microcontroller control, we also mo
 
 3. **Dual Monochromatic I2C OLED Integration:** Installed two small monochromatic I2C OLED screens into the cluster faceplate—one dedicated to rendering cumulative total distance (Odometer) and the other for a resettable Trip Meter.
 
-![Dual OLED Odometer Display Bench Test](Image/oled_odometer_display.jpg)
-> *Dual monochrome OLED screens rendering live digital Odometer and Trip Meter data.*
+![Dual OLED Odometer Display Bench Test](https://github.com/Username0240/Corolla-AE101-Speeduino-Instrument-Cluster/blob/3a3fcad332cbbab7e577545369b46e9fef589fc7/Image/20260829_125432.gif)
+
+> *Bench testing dual 0.96" I2C OLED screens running trip meter and total mileage displays.*
