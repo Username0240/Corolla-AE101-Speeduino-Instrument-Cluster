@@ -127,7 +127,7 @@ To retain the factory look and feel, the original mechanical trip reset stalk wa
 
 All design files, KiCad schematics, and complete Arduino source code are available in this repository:
 
-* **Schematic** Available in the [`/Schematics`](./Schematics) directory.
+* **Schematic** Available in the [`/Schematic`](./Schematic) directory.
 * **Arduino Firmware:** Located in the [`/Firmware`](./Firmware) folder.
 
 >  **Note on Development:** 
